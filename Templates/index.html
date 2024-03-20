@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Components Slots</title>
+</head>
+<body>
+  <my-button></my-button>
+
+  <template id="my-button-template">
+    <style>
+      /* ...样式代码保持不变... */
+    </style>
+    <button>
+        <slot>Click Me!</slot>
+    </button>
+  </template>
+  
+  <script src="./main.js"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Components ShadowDOM</title>
+</head>
+<body>
+  <my-element></my-element>
+  <open-my-element></open-my-element>
+  <closed-my-element></closed-my-element>
+
+
+  <script src="./main.js"></script>
+  <script>
+    // open
+    // const element = document.querySelector('open-my-element');
+    // console.log(element.shadowRoot); // 输出 ShadowRoot 对象
+
+    // closed
+    const element = document.querySelector('closed-my-element');
+    console.log(element.shadowRoot); // 输出 ShadowRoot 对象
+  </script>
+</body>
+</html>
