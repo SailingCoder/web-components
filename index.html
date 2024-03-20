@@ -2,14 +2,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>web components Button</title>
+    <title>web components</title>
 </head>
 <body>
-    <h1>web components Button</h1>
+    <h1>1. web components event</h1>
     <my-button></my-button>
 
+    <h1>2. web components slot</h1>
+    <my-element-slot>
+        <span slot="content">这是我的内容</span>
+    </my-element-slot>
 
-    <!-- 定义一个自定义元素 -->
+
+    <!-- 定义一个自定义元素 & slot -->
+    <template id="my-element-template">
+        <style>
+        /* 在这里定义一些样式 */
+        </style>
+        <!-- DOM -->
+        <div class="my-element">
+            <slot name="content">默认内容</slot>
+        </div>
+    </template>
+
+    <!-- 定义一个自定义元素 & 事件执行 -->
     <template id="my-button-template">
         <style>
         /* 在这里定义一些样式 */
@@ -29,6 +45,8 @@
         <!-- DOM -->
         <button>点击我</button>
     </template>
-    <script src="./button/base.js"></script>
+
+    <script src="./slot/base.js"></script>
+    <script src="./event/base.js"></script>
 </body>
 </html>
