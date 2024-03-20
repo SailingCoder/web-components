@@ -6,7 +6,19 @@
   <title>Web Components Tpl</title>
 </head>
 <body>
+  <h2>基础使用</h2>
   <my-button>Slots Custom Text</my-button>
+
+  <h2>命名插槽</h2>
+  <my-button-name>
+    <span slot="element-name">element-name</span>
+  </my-button-name>
+  <my-button-name>
+    <span slot="element-age">element-age</span>
+  </my-button-name>
+  <my-button-name>
+    <span slot="element-email">element-email</span>
+  </my-button-name>
 
   <script src="./main.js"></script>
 </body>

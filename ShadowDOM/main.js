@@ -30,6 +30,10 @@ var style = document.createElement('style');
 style.textContent = `
 p { color: gray; }
 `;
+// 引入外部样式同样可以使用 appendChild
+// const linkElement = document.createElement('link');
+// linkElement.setAttribute('rel', 'stylesheet');
+// linkElement.setAttribute('href', 'style.css');
 class MyElementAppend extends HTMLElement {
   constructor() {
     super();
@@ -37,6 +41,7 @@ class MyElementAppend extends HTMLElement {
     
     shadowRoot.appendChild(wrapper);
     shadowRoot.appendChild(style);
+    // shadowRoot.appendChild(linkElement);
   }
 }
 customElements.define('my-element-append', MyElementAppend);
