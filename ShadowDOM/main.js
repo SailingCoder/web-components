@@ -1,4 +1,9 @@
-class MyElement extends HTMLElement {
+
+/**
+ * 添加 DOM 元素方式
+ * @innerHTML
+ */
+class MyElementInnerHTML extends HTMLElement {
   constructor() {
     super();
     const shadowRoot = this.attachShadow({ mode: 'open' });
@@ -6,11 +11,35 @@ class MyElement extends HTMLElement {
       <style>
         p { color: black; }
       </style>
-      <p>Shadow DOM</p>
+      <p>使用 innerHTML</p>
     `;
   }
 }
-customElements.define('my-element', MyElement);
+customElements.define('my-element-inner', MyElementInnerHTML);
+
+
+/**
+ * 添加 DOM 元素方式
+ * @createElement 和 appendChild
+ */
+
+const wrapper = document.createElement('p');
+wrapper.textContent = '使用 createElement 和 appendChild';
+
+var style = document.createElement('style');
+style.textContent = `
+p { color: gray; }
+`;
+class MyElementAppend extends HTMLElement {
+  constructor() {
+    super();
+    const shadowRoot = this.attachShadow({ mode: 'open' });
+    
+    shadowRoot.appendChild(wrapper);
+    shadowRoot.appendChild(style);
+  }
+}
+customElements.define('my-element-append', MyElementAppend);
 
 /**
  * open 模式的 Shadow DOM。
