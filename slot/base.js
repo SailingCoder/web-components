@@ -1,5 +1,5 @@
 // 创建一个自定义元素类
-class MyElement extends HTMLElement {
+class MyElementSlot extends HTMLElement {
     constructor() {
       super(); // 调用超类（HTMLElement）的constructor
       const template = document.getElementById('my-element-template').content;
@@ -7,4 +7,4 @@ class MyElement extends HTMLElement {
     }
 }
 // 定义新的自定义元素
-customElements.define('my-element', MyElement);
+customElements.define('my-element-slot', MyElementSlot);

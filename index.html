@@ -2,19 +2,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>web components</title>
+    <title>Web Components</title>
+    <style>
+        span {
+            font-size: 14px;
+            font-weight: normal;
+        }
+    </style>
 </head>
 <body>
-    <h1>1. web components event</h1>
+    <h1>1. Web Components event<span>（添加点击事件）</span></h1>
     <my-button></my-button>
 
-    <h1>2. web components slot</h1>
+    <h1>2. Web Components slot<span>（slot 元素允许你编写不在页面渲染中显示的标记模板。）</span></h1>
     <my-element-slot>
-        <span slot="content">这是我的内容</span>
+        <!-- 注释掉下行代码，显示默认slot值 -->
+        <span slot="content">内容1</span>
     </my-element-slot>
 
+    <h1>3. Web Components import<span>（使用 ES6 模块或其它模块系统来导入组件。（推荐））</span></h1>
+    <my-element-import>
+        内容2
+    </my-element-import>
 
-    <!-- 定义一个自定义元素 & slot -->
+
+
+
+    <!-- 
+        1. web components event 
+        定义一个自定义元素 & slot 
+    -->
     <template id="my-element-template">
         <style>
         /* 在这里定义一些样式 */
@@ -25,7 +42,10 @@
         </div>
     </template>
 
-    <!-- 定义一个自定义元素 & 事件执行 -->
+    <!-- 
+        2. web components slot
+        定义一个自定义元素 & 事件执行 
+    -->
     <template id="my-button-template">
         <style>
         /* 在这里定义一些样式 */
@@ -46,7 +66,15 @@
         <button>点击我</button>
     </template>
 
+    <!-- 
+        3. web components import
+        定义一个自定义元素 & 事件执行 
+    -->
+    <!-- 使用 ES6 模块来组织 Web Component 和其依赖。见 ./import/base.js -->
+
+
     <script src="./slot/base.js"></script>
     <script src="./event/base.js"></script>
+    <script src="./import/base.js"></script>
 </body>
 </html>
